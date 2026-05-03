@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agnayi Infra CRM</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Agnayi Infra Resources</h1>
+  <p>Real Estate CRM Dashboard</p>
+</header>
+
+<div class="container">
+
+  <div class="main-layout">
+
+    <!-- LEFT PANEL (FORM) -->
+    <div class="left-panel">
+      <div class="form-section">
+        <h2>Add Property</h2>
+
+        <input id="title" placeholder="Property Title">
+        <input id="location" placeholder="Location">
+        <input id="price" placeholder="Price">
+
+        <input type="file" id="imageFile" accept="image/*">
+        <img id="preview" class="preview"/>
+
+        <select id="status">
+          <option>Available</option>
+          <option>Sold</option>
+          <option>Rented</option>
+        </select>
+
+        <button onclick="addProperty()">Add Property</button>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (DASHBOARD) -->
+    <div class="right-panel">
+
+      <div class="cards">
+        <div class="card">
+          Total Properties: <span id="totalProperties">0</span>
+        </div>
+
+        <div class="card">
+          Total Value: ₹<span id="totalValue">0</span>
+        </div>
+      </div>
+
+      <div class="charts">
+        <div class="chart-box">
+          <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+          <canvas id="locationChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-box">
+    <input 
+      id="filterLocation" 
+      placeholder="Filter by location..." 
+      onkeyup="filterProperties()"
+    >
+  </div>
+
+  <!-- PROPERTY LIST -->
+  <div id="propertyList" class="grid"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
