@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Lead = require('../models/Lead');
-const auth = require('../middleware/auth');
+const Lead = require('../models/Lead.js');
+const auth = require('../middleware/auth.js');
 
 // CREATE LEAD
 router.post('/', auth, async (req, res) => {
